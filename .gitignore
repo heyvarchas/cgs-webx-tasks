@@ -1,0 +1,83 @@
+# ================================
+# Node / npm (Backend + Frontend)
+# ================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ================================
+# Environment & Secrets
+# ================================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+*.env
+
+# ================================
+# React / Vite build output
+# ================================
+dist/
+build/
+.vite/
+.cache/
+
+# ================================
+# Docker
+# ================================
+.dockerignore
+
+# ================================
+# Blockchain / Hardhat / Foundry
+# ================================
+artifacts/
+cache/
+out/
+typechain/
+typechain-types/
+coverage/
+coverage.json
+deployments/localhost/
+.openzeppelin/
+
+# ================================
+# Solidity
+# ================================
+*.abi
+*.bin
+
+# ================================
+# OS Files
+# ================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ================================
+# IDE / Editor
+# ================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ================================
+# Logs
+# ================================
+logs/
+*.log
+
+# ================================
+# Misc
+# ================================
+*.pem
+.eslintcache
+.prettierignore
