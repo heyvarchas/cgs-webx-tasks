@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Server is up and running!" });
 });
 
-// Routes (we'll plug these in on Day 2)
-// app.use("/api", require("./routes"));
+// Routes
+app.use("/api", require("./routes"));
 
 module.exports = app;
