@@ -1,20 +1,10 @@
 const express = require("express");
-const dotenv = require("dotenv");
+const router = express.Router();
 
-// Load environment variables from .env file
-dotenv.config();
+const authRoutes = require("./auth");
+const userRoutes = require("./user");
 
-const app = express();
+router.use("/auth", authRoutes);
+router.use("/user", userRoutes);
 
-// Middleware to parse incoming JSON requests
-app.use(express.json());
-
-// Health check route
-app.get("/", (req, res) => {
-  res.json({ message: "Server is up and running!" });
-});
-
-// Routes
-app.use("/api", require("./routes"));
-
-module.exports = app;
+module.exports = router;
