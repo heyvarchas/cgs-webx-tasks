@@ -3,7 +3,7 @@
 # ================================
 # Stage 1: Build
 # ================================
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -20,7 +20,7 @@ COPY . .
 # ================================
 # Stage 2: Production
 # ================================
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set the working directory
 WORKDIR /app
