@@ -47,8 +47,8 @@ router.post("/signup", async (req, res) => {
 // POST /api/auth/signin
 // Logs in an existing user
 // ----------------------------------------
-router.post("/signin", async (req, res) => {
-  const { username, password } = req.body;
+router.get("/signin", async (req, res) => {
+  const { username, password } = req.query;
 
   // Check if both fields were provided
   if (!username || !password) {
