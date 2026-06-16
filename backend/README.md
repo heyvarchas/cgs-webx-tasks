@@ -125,15 +125,14 @@ Creates a new user account.
 
 ---
 
-#### POST `/api/auth/signin`
+#### GET `/api/auth/signin`
 Logs in an existing user.
 
-**Request Body:**
-```json
-{
-  "username": "john",
-  "password": "secret123"
-}
+**Request Query:**
+Make sure you add your username and password in the query part of the URL. I've used this because GET request doesn't have a Body. For example -
+```
+http://localhost:5000/api/auth/signin?username=usrnme&password=pwd
+Replace usrnme with your username and pwd with your password
 ```
 
 **Response:**
@@ -182,6 +181,51 @@ Updates the logged-in user's description.
   "message": "Description updated successfully",
   "username": "john",
   "description": "hey i'm john!"
+}
+```
+
+---
+
+## Testing the API
+
+You can test all endpoints using [Thunder Client](https://www.thunderclient.com/) (VS Code extension) or any HTTP client like Postman.
+
+### 1. Signup
+- Method: `POST`
+- URL: `http://localhost:5000/api/auth/signup`
+- Body (JSON):
+```json
+{
+  "username": "testuser",
+  "password": "test1234"
+}
+```
+Copy the `token` from the response — you'll need it for the protected routes.
+
+### 2. Signin
+- Method: `GET`
+- URL: `http://localhost:5000/api/auth/signin?username=testuser&password=test1234`
+- No body needed — credentials are passed as query parameters.
+
+### 3. Get Profile
+- Method: `GET`
+- URL: `http://localhost:5000/api/user/me`
+- Headers:
+```
+Authorization: Bearer <your_token_here>
+```
+
+### 4. Update Description
+- Method: `PUT`
+- URL: `http://localhost:5000/api/user/me`
+- Headers:
+```
+Authorization: Bearer <your_token_here>
+```
+- Body (JSON):
+```json
+{
+  "description": "hey i'm testuser!"
 }
 ```
 
