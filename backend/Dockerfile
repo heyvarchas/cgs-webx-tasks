@@ -1,4 +1,4 @@
-# Note: I've used AI heavily for this file due to its complicated nature
+# Note: I've used AI heavily for this file and docker-compose.yml due to their complicated nature
 
 # ================================
 # Stage 1: Build
