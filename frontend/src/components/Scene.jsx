@@ -1,7 +1,8 @@
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, Environment } from '@react-three/drei'
 import Car from './Car.jsx'
+import Loader from './Loader.jsx'
 
 export default function Scene() {
   return (
@@ -11,7 +12,8 @@ export default function Scene() {
       <directionalLight position={[5, 5, 5]} intensity={1.2} />
 
       {/* Car model, wrapped in Suspense so it doesn't break while loading */}
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
+        <Environment preset='city' />
         <Car position={[0, -0.5, 0]} />
       </Suspense>
 
