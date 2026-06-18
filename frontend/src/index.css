@@ -15,7 +15,11 @@ html, body, #root {
 }
 
 body {
-  background: #0a0b0d;
+  background: linear-gradient(
+    to bottom,
+    #1e293b,
+    #0f172a
+  );
   color: #d4d7dc;
   font-family: system-ui, -apple-system, sans-serif;
   overflow: hidden;
