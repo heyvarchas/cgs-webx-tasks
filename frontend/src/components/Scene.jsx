@@ -12,7 +12,7 @@ export default function Scene() {
 
       {/* Car model, wrapped in Suspense so it doesn't break while loading */}
       <Suspense fallback={null}>
-        <Car />
+        <Car position={[0, -0.5, 0]} />
       </Suspense>
 
       {/* Mouse/touch camera controls */}
