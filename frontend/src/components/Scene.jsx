@@ -1,5 +1,7 @@
+import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import Car from './Car.jsx'
 
 export default function Scene() {
   return (
@@ -8,11 +10,10 @@ export default function Scene() {
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} intensity={1.2} />
 
-      {/* Temporary placeholder — real car model comes next */}
-      <mesh>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="orange" />
-      </mesh>
+      {/* Car model, wrapped in Suspense so it doesn't break while loading */}
+      <Suspense fallback={null}>
+        <Car />
+      </Suspense>
 
       {/* Mouse/touch camera controls */}
       <OrbitControls />
